@@ -24,11 +24,29 @@ const winningCombos = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
 
 // const gameBoard = ["X", "X", "X", "O", "O", "X", "X", "O", "O"]
 
-const mappedBoard = []
-for (let i = 0; i < winningCombos.length; i++) {
-  const gameArrayCombos = winningCombos[i]
-    .map(index => gameBoard[index])
-  mappedBoard.push(gameArrayCombos)
+// map user entries to the winning coordinates
+// works. but not efficient. fml
+// const setEntriesToWinCoord = function () {
+//   const mappedBoard = []
+//   for (let i = 0; i < winningCombos.length; i++) {
+//     const gameArrayCombos = winningCombos[i]
+//       .map(index => gameBoard[index])
+//     mappedBoard.push(gameArrayCombos)
+//   }
+//   console.log(mappedBoard)
+// }
+
+const checkForWin = function () {
+  if (
+    (gameBoard[1] !== '' && gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2]) ||
+    (gameBoard[3] !== '' && gameBoard[3] === gameBoard[4] && gameBoard[4] === gameBoard[5]) ||
+    (gameBoard[6] !== '' && gameBoard[6] === gameBoard[7] && gameBoard[7] === gameBoard[8]) ||
+    (gameBoard[0] !== '' && gameBoard[0] === gameBoard[4] && gameBoard[4] === gameBoard[8]) ||
+    (gameBoard[2] !== '' && gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6])
+  ) {
+    alert('We have a winner!')
+    $('.box').removeEventListener('click', setClickValue)
+  }
 }
 
 // const allTheSame = mappedBoard[i].reduce((a, b) => (a === b) ? a : NaN)
@@ -50,6 +68,8 @@ const setClickValue = function () {
   if ($(this).text() === '') {
     $(this).text(player)
     pushToGameArray(player, index)
+    //  setEntriesToWinCoord()
+    checkForWin()
     togglePlayer()
   } else {
     $('#message-box').text('That box already has a value. Choose another box.')
