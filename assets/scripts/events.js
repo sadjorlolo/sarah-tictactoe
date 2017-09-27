@@ -1,5 +1,9 @@
 'use strict'
 
+const getFormFields = require('../../lib/get-form-fields.js')
+const api = require('./auth/api.js')
+const ui = require('./auth/ui.js')
+
 // Initial player value
 let player = 'X'
 // if player is X, switch to O, and vice versa
@@ -19,8 +23,8 @@ const pushToGameArray = function (player, index) {
   console.log('current array is', gameBoard)
 }
 
-const winningCombos = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
-  [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+// const winningCombos = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
+//   [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
 
 // const gameBoard = ["X", "X", "X", "O", "O", "X", "X", "O", "O"]
 
@@ -77,8 +81,19 @@ const setClickValue = function () {
   console.log(player)
 }
 
+const onSignUp = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  console.log(data)
+  api.signUp(data)
+    .then(ui.signUpSuccess)
+    .catch(ui.signUpFailure)
+}
+
 const addHandlers = function () {
   $('.box').on('click', setClickValue)
+
+  $('#sign-up').on('submit', onSignUp)
 }
 
 module.exports = {
