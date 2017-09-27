@@ -2,6 +2,7 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
+const events = require('.events.js')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -12,3 +13,9 @@ $(() => {
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+
+// When a user clicks on a box, the internal text changes to the current player
+
+$(() => {
+  events.addHandlers()
+})
