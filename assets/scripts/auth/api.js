@@ -3,7 +3,7 @@
 const config = require('../config.js')
 const store = require('../store.js')
 
-const signUp = function (data) {
+const signup = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/sign-up',
     method: 'POST',
@@ -11,7 +11,7 @@ const signUp = function (data) {
   })
 }
 
-const signIn = function (data) {
+const signin = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/sign-in',
     method: 'POST',
@@ -19,7 +19,7 @@ const signIn = function (data) {
   })
 }
 
-const changePassword = function (data) {
+const changepw = function (data) {
   // console.log(store.user)
   // console.log(data)
   return $.ajax({
@@ -32,7 +32,7 @@ const changePassword = function (data) {
   })
 }
 
-const signOut = function () {
+const signout = function () {
   // console.log(store.user)
   return $.ajax({
     url: config.apiOrigin + '/sign-out/' + store.user.id,
@@ -43,9 +43,20 @@ const signOut = function () {
   })
 }
 
+const index = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  signUp,
-  signIn,
-  changePassword,
-  signOut
+  signup,
+  signin,
+  changepw,
+  signout,
+  index
 }

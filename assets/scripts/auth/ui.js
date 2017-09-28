@@ -26,6 +26,8 @@ const signInSuccess = function (data) {
   $('#change-pswd').show()
   $('#sign-out').show()
   $('.game-board').show()
+  console.log(store)
+  console.log(store.user)
 }
 
 const signInFailure = function () {
@@ -63,6 +65,14 @@ const signOutFailure = function () {
   $('#auth-msg-box').text('Sign out failed.')
 }
 
+const getGamesSuccess = function (data) {
+  console.log('data happens', data)
+}
+
+const getGamesError = function () {
+  console.log('get games did not work')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -71,5 +81,7 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  getGamesSuccess,
+  getGamesError
 }

@@ -92,7 +92,7 @@ const onSignUp = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
   // console.log(data)
-  api.signUp(data)
+  api.signup(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
 }
@@ -101,7 +101,7 @@ const onSignIn = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
   // console.log(data)
-  api.signIn(data)
+  api.signin(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
 }
@@ -110,14 +110,14 @@ const onChangePassword = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
   // console.log(data)
-  api.changePassword(data)
+  api.changepw(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
 }
 
 const onSignOut = function (event) {
   event.preventDefault()
-  api.signOut()
+  api.signout()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }
@@ -134,6 +134,18 @@ const hideSignOut = function () {
   $('#sign-out').hide()
 }
 
+// API GAME LOGIC ATTEMPTS BEGIN HERE! //
+
+const onGetGames = function (event) {
+  console.log('this button can be clicked')
+  event.preventDefault()
+  api.index()
+    .then(ui.getGamesSuccess)
+    .catch(ui.getGamesError)
+}
+
+// const onCreateGame = function (event) {}
+
 const addHandlers = function () {
   $('.box').on('click', setClickValue)
 
@@ -144,6 +156,7 @@ const addHandlers = function () {
   $(window).ready(hideGame)
   $(window).ready(hideChangePswd)
   $(window).ready(hideSignOut)
+  $('#get-games').on('click', onGetGames)
 }
 
 module.exports = {
