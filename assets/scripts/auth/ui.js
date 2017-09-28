@@ -25,7 +25,6 @@ const signInSuccess = function (data) {
   $('#sign-up').hide()
   $('#change-pswd').show()
   $('#sign-out').show()
-  $('.game-board').show()
   console.log(store)
   console.log(store.user)
 }
@@ -75,9 +74,20 @@ const getGamesError = function () {
 
 const createGameSuccess = function (data) {
   console.log('data created!', data)
+  store.game = data.game
+  $('.game-board').show()
+  console.log(store.game)
 }
 
 const createGameError = function () {
+  console.log('create game did not work.')
+}
+
+const updateGameSuccess = function (data) {
+  console.log('game update successfully', data)
+}
+
+const updateGameError = function () {
   console.log('create game did not work.')
 }
 
@@ -93,5 +103,7 @@ module.exports = {
   getGamesSuccess,
   getGamesError,
   createGameSuccess,
-  createGameError
+  createGameError,
+  updateGameSuccess,
+  updateGameError
 }

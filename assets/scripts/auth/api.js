@@ -60,7 +60,23 @@ const create = function () {
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
-    // data
+  })
+}
+
+// const show = function (id) {
+//   return $.ajax({
+//     url: config.apiOrigin + '/games/' + id,
+//     method: 'GET'
+//   })
+// }
+const update = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
   })
 }
 
@@ -70,5 +86,7 @@ module.exports = {
   changepw,
   signout,
   index,
-  create
+  create,
+  update
+  // show
 }

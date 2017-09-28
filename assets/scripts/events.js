@@ -147,18 +147,50 @@ const onGetGames = function (event) {
 const onCreateGame = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  const game = data.games
-  console.log('game is', game)
+  // const game = data.games
+  // console.log('game is', game)
   // if (data.book.id.length !== 0) {
   api.create(data)
     .then(ui.createGameSuccess)
     .catch(ui.createGameError)
 }
 
-// const onCreateGame = function (event) {}
+// const onGetAGame = function (event) {
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   const game = data.games
+//
+//   if (game.id.length !== 0) {
+//     api.show(game.id)
+//       .then(ui.getAGameSuccess)
+//       .catch(ui.getAGameError)
+//   } else {
+//     console.log('Please provide a game id!')
+//   }
+// }
+
+const onUpdateGame = function (event) {
+  event.preventDefault()
+  const index = $(this).attr('id')
+  const value = $(this).text()
+  const data = {
+    'game': {
+      'cell': {
+        'index': index,
+        'value': value
+      }
+    }
+  }
+  console.log(data)
+  console.log(event.currentTarget)
+  api.update(data)
+    .then(ui.updateGameSuccess)
+    .catch(ui.updateGameError)
+}
 
 const addHandlers = function () {
   $('.box').on('click', setClickValue)
+  $('.box').on('click', onUpdateGame)
 
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -170,6 +202,7 @@ const addHandlers = function () {
 
   $('#get-games').on('click', onGetGames)
   $('#create-game').on('click', onCreateGame)
+  // $('#get-a-game').on('click', onGetAGame)
 }
 
 module.exports = {
