@@ -28,6 +28,18 @@ const signInFailure = function (error) {
   // $('#message').text('You are the weakest link. Goodbye.')
 }
 
+const changePasswordSuccess = function (data) {
+  console.log(data)
+  console.log('Changed password successfully!')
+  // $('#message').text('Changed password successfully!') // we don't get data back from a change password (204 no content)
+}
+
+const changePasswordFailure = function (error) {
+  console.log('No bueno. Please try again.')
+  console.error(error)
+  // $('#message').text('You did not change your password. Silly!')
+}
+
 const signOutSuccess = function (data) {
   console.log(data)
   console.log('signed out successfully!')
@@ -45,6 +57,8 @@ module.exports = {
   signUpFailure,
   signInSuccess,
   signInFailure,
+  changePasswordSuccess,
+  changePasswordFailure,
   signOutSuccess,
   signOutFailure
 }
