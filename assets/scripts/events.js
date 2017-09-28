@@ -99,11 +99,22 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
+
+
+const onSignOut = function (event) {
+  event.preventDefault()
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
+
 const addHandlers = function () {
   $('.box').on('click', setClickValue)
 
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
+  $('#sign-out').on('submit', onSignOut)
+  $('change-pswd').on('submit', onChangePswd)
 }
 
 module.exports = {
