@@ -23,7 +23,7 @@ const gameBoard = ['', '', '', '', '', '', '', '', '']
 const pushToGameArray = function (player, index) {
   const thisPlayer = player
   gameBoard[index] = thisPlayer
-  console.log('current array is', gameBoard)
+  // console.log('current array is', gameBoard)
 }
 
 // const winningCombos = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -86,6 +86,8 @@ const setClickValue = function () {
   // console.log(currentPlayer)
 }
 
+// DO NOT TOUCH ANY OF THIS. IT WORKS FOR NOW! //
+
 const onSignUp = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
@@ -120,6 +122,18 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const hideGame = function () {
+  $('.game-board').hide()
+}
+
+const hideChangePswd = function () {
+  $('#change-pswd').hide()
+}
+
+const hideSignOut = function () {
+  $('#sign-out').hide()
+}
+
 const addHandlers = function () {
   $('.box').on('click', setClickValue)
 
@@ -127,6 +141,9 @@ const addHandlers = function () {
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-pswd').on('submit', onChangePassword)
+  $(window).ready(hideGame)
+  $(window).ready(hideChangePswd)
+  $(window).ready(hideSignOut)
 }
 
 module.exports = {

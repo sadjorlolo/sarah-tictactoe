@@ -6,6 +6,7 @@ const signUpSuccess = function (data) {
   $('#auth-msg-box').text('Sign up successful!')
   // console.log(data)
   // console.log('You/ve signed up successfully!')
+  $('#sign-up').hide()
 }
 
 const signUpFailure = function () {
@@ -20,6 +21,11 @@ const signInSuccess = function (data) {
   // console.log(store.user)
   // console.log('You/ve signed in successfully!')
   $('#auth-msg-box').text('Signed in successfully!')
+  $('#sign-in').hide()
+  $('#sign-up').hide()
+  $('#change-pswd').show()
+  $('#sign-out').show()
+  $('.game-board').show()
 }
 
 const signInFailure = function () {
@@ -45,6 +51,11 @@ const signOutSuccess = function (data) {
   // console.log('signed out successfully!')
   $('#auth-msg-box').text('Signed out successfully!') // we don't get data back from a change password (204 no content)
   store.user = null
+  $('#sign-in').show()
+  $('#sign-up').show()
+  $('#change-pswd').hide()
+  $('#sign-out').hide()
+  $('.game-board').hide()
 }
 
 const signOutFailure = function () {
