@@ -53,10 +53,22 @@ const index = function () {
   })
 }
 
+const create = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/games',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+    // data
+  })
+}
+
 module.exports = {
   signup,
   signin,
   changepw,
   signout,
-  index
+  index,
+  create
 }

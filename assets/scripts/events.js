@@ -144,6 +144,17 @@ const onGetGames = function (event) {
     .catch(ui.getGamesError)
 }
 
+const onCreateGame = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  const game = data.games
+  console.log('game is', game)
+  // if (data.book.id.length !== 0) {
+  api.create(data)
+    .then(ui.createGameSuccess)
+    .catch(ui.createGameError)
+}
+
 // const onCreateGame = function (event) {}
 
 const addHandlers = function () {
@@ -156,7 +167,9 @@ const addHandlers = function () {
   $(window).ready(hideGame)
   $(window).ready(hideChangePswd)
   $(window).ready(hideSignOut)
+
   $('#get-games').on('click', onGetGames)
+  $('#create-game').on('click', onCreateGame)
 }
 
 module.exports = {

@@ -73,6 +73,14 @@ const getGamesError = function () {
   console.log('get games did not work')
 }
 
+const createGameSuccess = function (data) {
+  console.log('data created!', data)
+}
+
+const createGameError = function () {
+  console.log('create game did not work.')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -83,5 +91,7 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   getGamesSuccess,
-  getGamesError
+  getGamesError,
+  createGameSuccess,
+  createGameError
 }
