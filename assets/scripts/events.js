@@ -99,8 +99,6 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 }
 
-
-
 const onSignOut = function (event) {
   event.preventDefault()
   api.signOut()
@@ -114,7 +112,7 @@ const addHandlers = function () {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
-  $('change-pswd').on('submit', onChangePswd)
+  // $('change-pswd').on('submit', onChangePswd)
 }
 
 module.exports = {
