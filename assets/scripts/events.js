@@ -8,6 +8,7 @@ const ui = require('./auth/ui.js')
 const playerX = 'X'
 const playerO = 'O'
 let currentPlayer = playerX
+
 // if player is X, switch to O, and vice versa
 const togglePlayer = function () {
   if (currentPlayer === playerX) {
@@ -50,8 +51,10 @@ const checkForWin = function () {
     (gameBoard[0] !== '' && gameBoard[0] === gameBoard[4] && gameBoard[4] === gameBoard[8]) ||
     (gameBoard[2] !== '' && gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6])
   ) {
-    alert('Player ' + currentPlayer + ' is the winner!')
-    // $('.box').removeEventListener('click', setClickValue)
+    $('#declare-winner').text('Player ' + currentPlayer + ' is the winner!')
+    $('.box').off('click')
+  } else {
+    togglePlayer()
   }
 }
 
@@ -70,23 +73,23 @@ const setClickValue = function () {
   // ... only if the box is empty.
   $('#message-box').text('')
   const index = $(this).attr('id')
-  console.log(index)
+  // console.log(index)
   if ($(this).text() === '') {
     $(this).text(currentPlayer)
     pushToGameArray(currentPlayer, index)
     //  setEntriesToWinCoord()
     checkForWin()
-    togglePlayer()
+    // togglePlayer()
   } else {
     $('#message-box').text('That box already has a value. Choose another box.')
   }
-  console.log(currentPlayer)
+  // console.log(currentPlayer)
 }
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log(data)
+  // console.log(data)
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)
@@ -95,7 +98,7 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log(data)
+  // console.log(data)
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
@@ -104,7 +107,7 @@ const onSignIn = function (event) {
 const onChangePassword = function (event) {
   const data = getFormFields(this)
   event.preventDefault()
-  console.log(data)
+  // console.log(data)
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)

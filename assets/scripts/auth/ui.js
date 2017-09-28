@@ -3,53 +3,53 @@
 const store = require('../store.js')
 
 const signUpSuccess = function (data) {
-  console.log(data)
-  console.log('You/ve signed up successfully!')
-  // $('#message').text('Signed up successfully!')
+  $('#auth-msg-box').text('Sign up successful!')
+  // console.log(data)
+  // console.log('You/ve signed up successfully!')
 }
 
-const signUpFailure = function (error) {
-  console.error(error)
-  console.log('Womp womp! Sign up failed!')
-  // $('#message').text('You are the weakest link. Goodbye.')
+const signUpFailure = function () {
+  // console.error(error)
+  // console.log('Womp womp! Sign up failed!')
+  $('#auth-msg-box').text('Sign up failed.')
 }
 
 const signInSuccess = function (data) {
   store.user = data.user
-  console.log(data)
-  console.log(store.user)
-  console.log('You/ve signed in successfully!')
-  // $('#message').text('Signed up successfully!')
+  // console.log(data)
+  // console.log(store.user)
+  // console.log('You/ve signed in successfully!')
+  $('#auth-msg-box').text('Signed in successfully!')
 }
 
-const signInFailure = function (error) {
-  console.error(error)
-  console.log('Womp womp! Sign in failed!')
-  // $('#message').text('You are the weakest link. Goodbye.')
+const signInFailure = function () {
+  // console.error(error)
+  // console.log('Womp womp! Sign in failed!')
+  $('#auth-msg-box').text('Sign in failed.')
 }
 
 const changePasswordSuccess = function (data) {
-  console.log(data)
-  console.log('Changed password successfully!')
-  // $('#message').text('Changed password successfully!') // we don't get data back from a change password (204 no content)
+  // console.log(data)
+  // console.log('Changed password successfully!')
+  $('#auth-msg-box').text('Changed password successfully!') // we don't get data back from a change password (204 no content)
 }
 
-const changePasswordFailure = function (error) {
-  console.log('No bueno. Please try again.')
-  console.error(error)
-  // $('#message').text('You did not change your password. Silly!')
+const changePasswordFailure = function () {
+  // console.log('No bueno. Please try again.')
+  // console.error(error)
+  $('#auth-msg-box').text('Change Password failed.')
 }
 
 const signOutSuccess = function (data) {
-  console.log(data)
-  console.log('signed out successfully!')
-  // $('#message').text('Signed out successfully!') // we don't get data back from a change password (204 no content)
+  // console.log(data)
+  // console.log('signed out successfully!')
+  $('#auth-msg-box').text('Signed out successfully!') // we don't get data back from a change password (204 no content)
   store.user = null
 }
 
-const signOutFailure = function (error) {
-  console.error(error)
-  // $('#message').text('You did not sign out. Silly!')
+const signOutFailure = function () {
+  // console.error(error)
+  $('#auth-msg-box').text('Sign out failed.')
 }
 
 module.exports = {
