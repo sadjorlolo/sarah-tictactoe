@@ -5,21 +5,23 @@ const api = require('./auth/api.js')
 const ui = require('./auth/ui.js')
 
 // Initial player value
-let player = 'X'
+const playerX = 'X'
+const playerO = 'O'
+let currentPlayer = playerX
 // if player is X, switch to O, and vice versa
 const togglePlayer = function () {
-  if (player === 'X') {
-    player = 'O'
+  if (currentPlayer === playerX) {
+    currentPlayer = playerO
   } else {
-    player = 'X'
+    currentPlayer = playerX
   }
 }
 
 // when box clicked, push player value to the correct index in the array
 const gameBoard = ['', '', '', '', '', '', '', '', '']
 const pushToGameArray = function (player, index) {
-  const currentPlayer = player
-  gameBoard[index] = currentPlayer
+  const thisPlayer = player
+  gameBoard[index] = thisPlayer
   console.log('current array is', gameBoard)
 }
 
@@ -48,8 +50,8 @@ const checkForWin = function () {
     (gameBoard[0] !== '' && gameBoard[0] === gameBoard[4] && gameBoard[4] === gameBoard[8]) ||
     (gameBoard[2] !== '' && gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6])
   ) {
-    alert('We have a winner!')
-    $('.box').removeEventListener('click', setClickValue)
+    alert('Player ' + currentPlayer + ' is the winner!')
+    // $('.box').removeEventListener('click', setClickValue)
   }
 }
 
@@ -70,15 +72,15 @@ const setClickValue = function () {
   const index = $(this).attr('id')
   console.log(index)
   if ($(this).text() === '') {
-    $(this).text(player)
-    pushToGameArray(player, index)
+    $(this).text(currentPlayer)
+    pushToGameArray(currentPlayer, index)
     //  setEntriesToWinCoord()
     checkForWin()
     togglePlayer()
   } else {
     $('#message-box').text('That box already has a value. Choose another box.')
   }
-  console.log(player)
+  console.log(currentPlayer)
 }
 
 const onSignUp = function (event) {
