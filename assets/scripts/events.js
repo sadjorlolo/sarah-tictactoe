@@ -44,6 +44,7 @@ const pushToGameArray = function (player, index) {
 // }
 
 const checkForWin = function () {
+  const draw = gameBoard.every((box) => box !== '')
   if (
     (gameBoard[0] !== '' && gameBoard[0] === gameBoard[1] && gameBoard[1] === gameBoard[2]) ||
     (gameBoard[3] !== '' && gameBoard[3] === gameBoard[4] && gameBoard[4] === gameBoard[5]) ||
@@ -55,6 +56,9 @@ const checkForWin = function () {
     (gameBoard[2] !== '' && gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6])
   ) {
     $('#declare-winner').text('Player ' + currentPlayer + ' is the winner!')
+    $('.box').off('click')
+  } else if (draw) {
+    $('#declare-winner').text('Game is a draw! No one wins!')
     $('.box').off('click')
   } else {
     togglePlayer()
