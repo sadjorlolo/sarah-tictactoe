@@ -144,7 +144,7 @@ const hideSignOut = function () {
 // API GAME LOGIC ATTEMPTS BEGIN HERE! //
 
 const onGetGames = function (event) {
-  console.log('this button can be clicked')
+  // console.log('this button can be clicked')
   event.preventDefault()
   api.index()
     .then(ui.getGamesSuccess)
@@ -161,7 +161,7 @@ const onCreateGame = function (event) {
   api.create(data)
     .then(ui.createGameSuccess)
     .catch(ui.createGameError)
-  console.log('gameboard after createGame before loop is', gameBoard)
+  // console.log('gameboard after createGame before loop is', gameBoard)
   currentPlayer = playerX
   $('.box').text('')
   $('.box').on('click', setClickValue)
@@ -193,8 +193,8 @@ const onUpdateGame = function (event) {
       }
     }
   }
-  console.log(data)
-  console.log(event.currentTarget)
+  // console.log(data)
+  // console.log(event.currentTarget)
   api.update(data)
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameError)
@@ -212,8 +212,11 @@ const addHandlers = function () {
   $(window).ready(hideChangePswd)
   $(window).ready(hideSignOut)
 
+  $('#get-games').hide()
   $('#get-games').on('click', onGetGames)
   $('#create-game').on('click', onCreateGame)
+  $('#create-game').hide()
+
   // $('#get-a-game').on('click', onGetAGame)
 }
 

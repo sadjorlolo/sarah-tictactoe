@@ -16,9 +16,9 @@
       <form id="sign-up">
         <fieldset>
           <legend>Sign up!</legend>
-          <input type="text" name="credentials[email]" placeholder="Enter Email">
-          <input type="text" name="credentials[password]" placeholder="Enter Password">
-          <input type="text" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <input id='signup_email' type="text" name="credentials[email]" placeholder="Enter Email">
+          <input id='signup_pswd' type="password" name="credentials[password]" placeholder="Enter Password">
+          <input id='signup_conf' type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
           <input type="submit" name="submit" value="Sign up!">
         </fieldset>
       </form>
@@ -26,8 +26,8 @@
       <form id="sign-in">
         <fieldset>
           <legend>Sign in!</legend>
-          <input type="text" name="credentials[email]" placeholder="Enter Email">
-          <input type="text" name="credentials[password]" placeholder="Enter Password">
+          <input id='signin_email'type="text" name="credentials[email]" placeholder="Enter Email">
+          <input id='signin_pswd'type="password" name="credentials[password]" placeholder="Enter Password">
           <input type="submit" name="submit" value="Sign in!">
         </fieldset>
       </form>
@@ -35,8 +35,8 @@
       <form id="change-pswd">
         <fieldset>
           <legend>Change Password!</legend>
-          <input type="text" name="passwords[old]" placeholder="Enter Old Password">
-          <input type="text" name="passwords[new]" placeholder="Enter New Password">
+          <input id='pswd_old' type="password" name="passwords[old]" placeholder="Enter Old Password">
+          <input id='pswd_new' type="password" name="passwords[new]" placeholder="Enter New Password">
           <input type="submit" name="submit" value="Change Password!">
         </fieldset>
       </form>
