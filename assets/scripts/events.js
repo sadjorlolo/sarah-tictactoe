@@ -19,7 +19,7 @@ const togglePlayer = function () {
 }
 
 // when box clicked, push player value to the correct index in the array
-const gameBoard = ['', '', '', '', '', '', '', '', '']
+let gameBoard = []
 const pushToGameArray = function (player, index) {
   const thisPlayer = player
   gameBoard[index] = thisPlayer
@@ -148,6 +148,7 @@ const onGetGames = function (event) {
 }
 
 const onCreateGame = function (event) {
+  gameBoard = ['', '', '', '', '', '', '', '', '']
   event.preventDefault()
   const data = getFormFields(event.target)
   // const game = data.games
@@ -156,6 +157,10 @@ const onCreateGame = function (event) {
   api.create(data)
     .then(ui.createGameSuccess)
     .catch(ui.createGameError)
+  console.log('gameboard after createGame before loop is', gameBoard)
+  currentPlayer = playerX
+  $('.box').text('')
+  $('.box').on('click', setClickValue)
 }
 
 // const onGetAGame = function (event) {
@@ -192,7 +197,7 @@ const onUpdateGame = function (event) {
 }
 
 const addHandlers = function () {
-  $('.box').on('click', setClickValue)
+  $('.box').text('')
   $('.box').on('click', onUpdateGame)
 
   $('#sign-up').on('submit', onSignUp)
