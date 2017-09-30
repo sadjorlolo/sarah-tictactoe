@@ -55,10 +55,10 @@ const checkForWin = function () {
     (gameBoard[0] !== '' && gameBoard[0] === gameBoard[4] && gameBoard[4] === gameBoard[8]) ||
     (gameBoard[2] !== '' && gameBoard[2] === gameBoard[4] && gameBoard[4] === gameBoard[6])
   ) {
-    $('#declare-winner').text('Player ' + currentPlayer + ' is the winner!')
+    $('.declare-winner').text('Player ' + currentPlayer + ' is the winner!')
     $('.box').off('click')
   } else if (draw) {
-    $('#declare-winner').text('Game is a draw! No one wins!')
+    $('.declare-winner').text('Game is a draw! No one wins!')
     $('.box').off('click')
   } else {
     togglePlayer()
@@ -78,7 +78,7 @@ const checkForWin = function () {
 // when a box on the game board is clicked, set value within box to "X" or "O"
 const setClickValue = function () {
   // ... only if the box is empty.
-  $('#message-box').text('')
+  $('.message-box').text('')
   const index = $(this).attr('id')
   // console.log(index)
   if ($(this).text() === '') {
@@ -88,7 +88,7 @@ const setClickValue = function () {
     checkForWin()
     // togglePlayer()
   } else {
-    $('#message-box').text('That box already has a value. Choose another box.')
+    $('.message-box').text('That box already has a value. Choose another box.')
   }
   // console.log(currentPlayer)
 }
@@ -134,11 +134,11 @@ const hideGame = function () {
 }
 
 const hideChangePswd = function () {
-  $('#change-pswd').hide()
+  $('.change-pswd').hide()
 }
 
 const hideSignOut = function () {
-  $('#sign-out').hide()
+  $('.sign-out').hide()
 }
 
 // API GAME LOGIC ATTEMPTS BEGIN HERE! //
@@ -152,7 +152,7 @@ const onGetGames = function (event) {
 }
 
 const onCreateGame = function (event) {
-  $('#declare-winner').text('')
+  $('.declare-winner').text('')
   gameBoard = ['', '', '', '', '', '', '', '', '']
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -205,20 +205,20 @@ const addHandlers = function () {
   $('.box').text('')
   $('.box').on('click', onUpdateGame)
 
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-in').on('submit', onSignIn)
-  $('#sign-out').on('submit', onSignOut)
-  $('#change-pswd').on('submit', onChangePassword)
+  $('.sign-up').on('submit', onSignUp)
+  $('.sign-in').on('submit', onSignIn)
+  $('.sign-out').on('submit', onSignOut)
+  $('.change-pswd').on('submit', onChangePassword)
   $(window).ready(hideGame)
   $(window).ready(hideChangePswd)
   $(window).ready(hideSignOut)
 
-  $('#get-games').hide()
-  $('#get-games').on('click', onGetGames)
-  $('#create-game').on('click', onCreateGame)
-  $('#create-game').hide()
+  $('.get-games').hide()
+  $('.get-games').on('click', onGetGames)
+  $('.create-game').on('click', onCreateGame)
+  $('.create-game').hide()
 
-  // $('#get-a-game').on('click', onGetAGame)
+  // $('.get-a-game').on('click', onGetAGame)
 }
 
 module.exports = {

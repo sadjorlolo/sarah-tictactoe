@@ -12,44 +12,44 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <div id='auth-msg-box'></div>
-      <form id="sign-up">
+      <div class='auth-msg-box'></div>
+      <form class="sign-up">
         <fieldset>
           <legend>Sign up!</legend>
-          <input id='signup_email' type="text" name="credentials[email]" placeholder="Enter Email">
-          <input id='signup_pswd' type="password" name="credentials[password]" placeholder="Enter Password">
-          <input id='signup_conf' type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <input class='signup_email' type="text" name="credentials[email]" placeholder="Enter Email">
+          <input class='signup_pswd' type="password" name="credentials[password]" placeholder="Enter Password">
+          <input class='signup_conf' type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
           <input type="submit" name="submit" value="Sign up!">
         </fieldset>
       </form>
 
-      <form id="sign-in">
+      <form class="sign-in">
         <fieldset>
           <legend>Sign in!</legend>
-          <input id='signin_email'type="text" name="credentials[email]" placeholder="Enter Email">
-          <input id='signin_pswd'type="password" name="credentials[password]" placeholder="Enter Password">
+          <input class='signin_email'type="text" name="credentials[email]" placeholder="Enter Email">
+          <input class='signin_pswd'type="password" name="credentials[password]" placeholder="Enter Password">
           <input type="submit" name="submit" value="Sign in!">
         </fieldset>
       </form>
 
-      <form id="change-pswd">
+      <form class="change-pswd">
         <fieldset>
           <legend>Change Password!</legend>
-          <input id='pswd_old' type="password" name="passwords[old]" placeholder="Enter Old Password">
-          <input id='pswd_new' type="password" name="passwords[new]" placeholder="Enter New Password">
+          <input class='pswd_old' type="password" name="passwords[old]" placeholder="Enter Old Password">
+          <input class='pswd_new' type="password" name="passwords[new]" placeholder="Enter New Password">
           <input type="submit" name="submit" value="Change Password!">
         </fieldset>
       </form>
 
-      <form id="sign-out">
+      <form class="sign-out">
         <fieldset>
           <legend>Sign Out!</legend>
           <input type="submit" name="submit" value="Sign out!">
         </fieldset>
       </form>
 
-      <input type='button' id='get-games' name='button' value='get games'>
-      <input type='button' id='create-game' name='button' value='create game'>
+      <input type='button' class='get-games' name='button' value='get games'>
+      <input type='button' class='create-game' name='button' value='create game'>
 
       <!-- <form id='get-a-game'>
         <fieldset>
@@ -59,7 +59,7 @@
       </form> -->
 
       <!-- <h1>Let the Games Begin!</h1> -->
-      <h2 id='declare-winner'></h2>
+      <h2 class='declare-winner'></h2>
       <div class='game-board'>
 
         <div class='top-row'>
@@ -81,8 +81,8 @@
         </div>
       </div>
       <br>
-      <div id='update-msg'></div>
-      <div id='message-box'></div>
-      <div id='stats-box'></div>
+      <div class='update-msg'></div>
+      <div class='message-box'></div>
+      <div class='stats-box'></div>
     </body>
 </html>
