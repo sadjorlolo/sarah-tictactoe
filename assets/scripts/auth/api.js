@@ -20,11 +20,9 @@ const signin = function (data) {
 }
 
 const changepw = function (data) {
-  // console.log(store.user)
-  // console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/change-password/' + store.user.id,
-    method: 'PATCH', // need to specify the user's identtity, hence auth
+    method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
@@ -33,10 +31,9 @@ const changepw = function (data) {
 }
 
 const signout = function () {
-  // console.log(store.user)
   return $.ajax({
     url: config.apiOrigin + '/sign-out/' + store.user.id,
-    method: 'DELETE', // need to specify the user's identtity
+    method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }

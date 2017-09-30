@@ -1,5 +1,13 @@
 'use strict'
 
+const initialLoadHide = function () {
+  $('.game-board').hide()
+  $('.change-pswd').hide()
+  $('.sign-out').hide()
+  $('.get-games').hide()
+  $('.create-game').hide()
+}
+
 const clearSignUp = function () {
   $('.signup_email').val('')
   $('.signup_pswd').val('')
@@ -45,6 +53,7 @@ const signOutClearMessage = function () {
 }
 
 module.exports = {
+  initialLoadHide,
   clearSignUp,
   clearSignIn,
   clearPassword,

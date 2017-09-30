@@ -27,7 +27,7 @@ const signInFailure = function () {
 }
 
 const changePasswordSuccess = function (data) {
-  $('.auth-msg-box').text('Changed password successfully!') // we don't get data back from a change password (204 no content)
+  $('.auth-msg-box').text('Changed password successfully!')
   showhide.clearPassword()
 }
 
@@ -37,7 +37,7 @@ const changePasswordFailure = function () {
 }
 
 const signOutSuccess = function (data) {
-  $('.auth-msg-box').text('Signed out successfully!') // we don't get data back from a change password (204 no content)
+  $('.auth-msg-box').text('Signed out successfully!')
   store.user = null
   showhide.signOutShowHide()
   showhide.signOutClearMessage()
