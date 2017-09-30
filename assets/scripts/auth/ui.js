@@ -74,6 +74,10 @@ const signOutSuccess = function (data) {
   $('.game-board').hide()
   $('#create-game').hide()
   $('#get-games').hide()
+  $('#message-box').text('')
+  $('#declare-winner').text('')
+  $('#stats-box').text('')
+  $('#update-msg').text('')
 }
 
 const signOutFailure = function () {
@@ -83,11 +87,11 @@ const signOutFailure = function () {
 
 const getGamesSuccess = function (data) {
   // console.log('data happens', data)
-  $('#message-box').text('You have played a total of ' + data.games.length + ' games.')
+  $('#stats-box').text('You have played a total of ' + data.games.length + ' games.')
 }
 
 const getGamesError = function () {
-  $('#message-box').text('Sorry, game retrieval did not work.')
+  $('#stats-box').text('Sorry, game retrieval did not work.')
   // console.log('get games did not work')
 }
 
@@ -106,12 +110,12 @@ const createGameError = function () {
 }
 
 const updateGameSuccess = function (data) {
-  $('#message-box').text('Move saved!')
+  $('update-msg').text('Move saved!')
   // console.log('game update successfully', data)
 }
 
 const updateGameError = function () {
-  $('#message-box').text('Sorry, game move did not save.')
+  $('#update-msg').text('Sorry, game move did not save.')
   // console.log('create game did not work.')
 }
 

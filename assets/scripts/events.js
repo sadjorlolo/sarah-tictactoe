@@ -152,6 +152,7 @@ const onGetGames = function (event) {
 }
 
 const onCreateGame = function (event) {
+  $('#declare-winner').text('')
   gameBoard = ['', '', '', '', '', '', '', '', '']
   event.preventDefault()
   const data = getFormFields(event.target)
