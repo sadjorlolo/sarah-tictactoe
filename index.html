@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Sarah's Tic-Tac-Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,29 +12,34 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <div class='auth-msg-box'></div>
-      <form class="sign-up">
+
+      <h1>Welcome to Sarah's Tic Tac Toe Game!</h1>
+      <h4 class='sign-in-as'></h4>
+      <h3 class='sign-in-play'>Please sign in to play.</h3>
+      <form class="sign-up user-info">
         <fieldset>
-          <legend>Sign up!</legend>
+          <div class='auth-header'>Sign Up!</div>
           <input class='signup_email' type="text" name="credentials[email]" placeholder="Enter Email">
           <input class='signup_pswd' type="password" name="credentials[password]" placeholder="Enter Password">
           <input class='signup_conf' type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <input type="submit" name="submit" value="Sign up!">
+          <input class='auth-button' type="submit" name="submit" value="Sign up!">
         </fieldset>
       </form>
 
-      <form class="sign-in">
+      <form class="sign-in user-info">
         <fieldset>
-          <legend>Sign in!</legend>
+          <div class='auth-header'>Sign In!</div>
           <input class='signin_email'type="text" name="credentials[email]" placeholder="Enter Email">
           <input class='signin_pswd'type="password" name="credentials[password]" placeholder="Enter Password">
-          <input type="submit" name="submit" value="Sign in!">
+          <input class='auth-button' type="submit" name="submit" value="Sign in!">
         </fieldset>
       </form>
+      <div class='auth-msg-box'></div>
 
+      <button type='button' class='pswd-button'>Change Your Password</button>
       <form class="change-pswd">
         <fieldset>
-          <legend>Change Password!</legend>
+          <!-- <legend>Change Password!</legend> -->
           <input class='pswd_old' type="password" name="passwords[old]" placeholder="Enter Old Password">
           <input class='pswd_new' type="password" name="passwords[new]" placeholder="Enter New Password">
           <input type="submit" name="submit" value="Change Password!">
@@ -56,21 +61,21 @@
       <div class='game-board'>
 
         <div class='top-row'>
-          <div class='col-xs-4 box' id='0'></div>
-          <div class='col-xs-4 box' id='1'></div>
-          <div class='col-xs-4 box' id='2'></div>
+          <div class='box' id='0'></div>
+          <div class='box' id='1'></div>
+          <div class='box' id='2'></div>
         </div>
 
         <div class='middle-row'>
-          <div class='col-xs-4 box' id='3'></div>
-          <div class='col-xs-4 box' id='4'></div>
-          <div class='col-xs-4 box' id='5'></div>
+          <div class='box' id='3'></div>
+          <div class='box' id='4'></div>
+          <div class='box' id='5'></div>
         </div>
 
         <div class='top-row'>
-          <div class='col-xs-4 box' id='6'></div>
-          <div class='col-xs-4 box' id='7'></div>
-          <div class='col-xs-4 box' id='8'></div>
+          <div class='box' id='6'></div>
+          <div class='box' id='7'></div>
+          <div class='box' id='8'></div>
         </div>
       </div>
       <br>

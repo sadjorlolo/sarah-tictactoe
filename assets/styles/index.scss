@@ -5,6 +5,49 @@ $light-beige: #f0edeb;
 $black: #000;
 $color: #999290;
 
+body {
+  background-color: $light-beige;
+  margin: 0;
+  padding: 0;
+  font-family: 'trebuchet ms', sans-serif;
+  text-align: center;
+}
+
+.user-info {
+  background-color: white;
+  width: 300px;
+  margin: auto;
+
+
+  .auth-header {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 30px;
+  }
+
+  input {
+    display: block;
+    width: 250px;
+    margin: 5px auto;
+    border: 1px solid red;
+    padding-left: 5px;
+    font-size: 18px;
+  }
+
+  fieldset {
+    border: 1px solid black;
+    margin: 20px 0;
+  }
+
+  .auth-button {
+    margin-bottom: 20px;
+  }
+}
+
+.auth-msg-box {
+  color: red;
+  font-size: 20px;
+}
 
 .box {
   border: 1px solid $black;
@@ -13,15 +56,3 @@ $color: #999290;
   height: 50px;
   text-align: center;
 }
-
-body {
-  background-color: $light-beige;
-}
-
-form {
-  // #sign-in #sign-up {
-  background-color: $color;
-  }
-// }.sign-in .sign-up {
-//   background-color: #999290
-// }

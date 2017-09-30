@@ -9,20 +9,20 @@ const signUpSuccess = function (data) {
 }
 
 const signUpFailure = function () {
-  $('.auth-msg-box').text('Sign up failed.')
+  $('.auth-msg-box').text('Sign up failed. Please try again.')
   showhide.clearSignUp()
 }
 
 const signInSuccess = function (data) {
   store.user = data.user
-  $('.auth-msg-box').text('Signed in successfully!')
+  $('.sign-in-as').text('You are signed in as ' + store.user.email + '!')
 
   showhide.clearSignIn()
   showhide.signInShowHide()
 }
 
 const signInFailure = function () {
-  $('.auth-msg-box').text('Sign in failed.')
+  $('.auth-msg-box').text('Sign in failed. Please try again.')
   showhide.clearSignIn()
 }
 
