@@ -63,12 +63,6 @@ const create = function () {
   })
 }
 
-// const show = function (id) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/games/' + id,
-//     method: 'GET'
-//   })
-// }
 const update = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
@@ -88,5 +82,4 @@ module.exports = {
   index,
   create,
   update
-  // show
 }
