@@ -19,7 +19,6 @@ const signInSuccess = function (data) {
 
   showhide.clearSignIn()
   showhide.signInShowHide()
-  // $('.create-game').on('click', onCreateGame)
 }
 
 const signInFailure = function () {
@@ -39,6 +38,7 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function (data) {
   $('.auth-msg-box').text('Signed out successfully!')
+  // store.game = null
   store.user = null
   showhide.signOutShowHide()
   showhide.signOutClearMessage()
@@ -69,8 +69,8 @@ const createGameError = function () {
   $('.message-box').text('Sorry, game creation did not work.')
 }
 
-const updateGameSuccess = function (data) {
-  console.log('data is', data)
+const updateGameSuccess = function () {
+  console.log('updatesuccess msg data is')
   $('.update-msg').text('Move saved!')
 }
 
