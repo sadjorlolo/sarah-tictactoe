@@ -84,6 +84,12 @@ The following technologies were used in the creation of this game:
       the particular signed-in user only.
 -  jQuery for DOM manipulation and event handling functionality.
 
+## Unsolved Problems
+
+1. Update responsiveness of gameboard height for smaller screens. Currently,
+  the width changes with bootstrap, but height stays static.
+2. Update `updateGameSuccess` message to reveal whose turn it is.
+
 ## Wireframes & User Stories
 
 ![Tic Tac Toe Wireframe](https://i.imgur.com/F8BSAez.png "Sarah's tictactoe wireframe")
