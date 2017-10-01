@@ -17,10 +17,12 @@ const togglePlayer = function () {
   }
 }
 
-let gameBoard = []
+let gameBoard
+
 const pushToGameArray = function (player, index) {
   const thisPlayer = player
   gameBoard[index] = thisPlayer
+  console.log(gameBoard)
 }
 
 const checkForWin = function () {
@@ -96,22 +98,27 @@ const onGetGames = function (event) {
 }
 
 const onCreateGame = function (event) {
-  $('.declare-winner').text('')
   gameBoard = ['', '', '', '', '', '', '', '', '']
+  console.log('oncreate box value is', $('.box').text())
+  $('.box').text('')
+  console.log('oncreate box value post clear', $('.box').text())
+
+  // $('.box').on('click', setClickValue)
+  $('.declare-winner').text('')
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log('oncreatedata data is', data)
   api.create(data)
     .then(ui.createGameSuccess)
     .catch(ui.createGameError)
   currentPlayer = playerX
-  $('.box').text('')
-  $('.box').on('click', setClickValue)
 }
 
 const onUpdateGame = function (event) {
   event.preventDefault()
   const index = $(this).attr('id')
   const value = $(this).text()
+  console.log('value is', value)
   const data = {
     'game': {
       'cell': {
@@ -123,10 +130,12 @@ const onUpdateGame = function (event) {
   api.update(data)
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameError)
+  console.log('onupdategame data is ', data)
 }
 
 const addHandlers = function () {
   $('.box').text('')
+  $('.box').on('click', setClickValue)
   $('.box').on('click', onUpdateGame)
 
   $('.sign-up').on('submit', onSignUp)

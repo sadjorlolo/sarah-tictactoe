@@ -1,45 +1,49 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-$light-beige: #f0edeb;
+$background: #f8fbf2;
+$grey: #69666b;
+$gold: #ecbe49;
+$peach: #ed9375;
+$purple: #20162f;
 $black: #000;
-$color: #999290;
 
 body {
-  background-color: $light-beige;
+  background-color: $background;
+  font-family: 'trebuchet ms', sans-serif;
   margin: 0;
   padding: 0;
-  font-family: 'trebuchet ms', sans-serif;
   text-align: center;
 }
 
 .user-info {
-  background-color: white;
-  width: 300px;
+  background-color: $gold;
   margin: auto;
+  width: 300px;
 
 
   .auth-header {
-    text-align: center;
-    margin: 10px 0;
+    color: $grey;
     font-size: 30px;
+    margin: 10px 0;
+    text-align: center;
   }
 
-  input {
+  .auth-input {
     display: block;
-    width: 250px;
-    margin: 5px auto;
-    border: 1px solid red;
-    padding-left: 5px;
     font-size: 18px;
+    margin: 5px auto;
+    padding-left: 5px;
+    width: 250px;
   }
 
   fieldset {
-    border: 1px solid black;
     margin: 20px 0;
   }
 
   .auth-button {
+    color: $background;
+    background-color: $grey;
     margin-bottom: 20px;
   }
 }
@@ -49,10 +53,49 @@ body {
   font-size: 20px;
 }
 
-.box {
-  border: 1px solid $black;
-  font-family: 'trebuchet ms';
+.change-pswd {
+
+  input {
+    font-size: 18px;
+    margin: 2px 5px;
+    padding-left: 5px;
+  }
+}
+
+.get-games {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.stats-box {
+  font-size: 18px;
+}
+
+.create-game {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.message-box {
   font-size: 30px;
-  height: 50px;
+}
+
+.game-board {
+  margin-bottom: 30px;
+}
+
+.sign-out {
+  clear: both;
+  font-size: 18px;
+}
+
+.box {
+  background-color: $peach;
+  border: 5px solid $background;
+  box-sizing: border-box;
+  color: $purple;
+  font-size: 80px;
+  height: 200px;
   text-align: center;
+  padding-top: 40px;
 }

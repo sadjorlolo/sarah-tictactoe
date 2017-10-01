@@ -6,7 +6,6 @@ const initialLoadHide = function () {
   $('.sign-out').hide()
   $('.get-games').hide()
   $('.create-game').hide()
-  // $('.pswd-button').hide()
 }
 
 const clearSignUp = function () {
@@ -32,7 +31,7 @@ const signInShowHide = function () {
   $('.create-game').show()
   $('.change-pswd').show()
   $('.sign-in-as').show()
-  // $('.pswd-button').show()
+  $('.pswd-msg-box').show()
 
   $('.sign-in').hide()
   $('.sign-up').hide()
@@ -52,7 +51,7 @@ const signOutShowHide = function () {
   $('.create-game').hide()
   $('.get-games').hide()
   $('.sign-in-as').hide()
-  // $('.pswd-button').hide()
+  $('.pswd-msg-box').hide()
 }
 
 const signOutClearMessage = function () {
@@ -60,6 +59,7 @@ const signOutClearMessage = function () {
   $('.declare-winner').text('')
   $('.stats-box').text('')
   $('.update-msg').text('')
+  $('.pswd-msg-box').text('')
 }
 
 module.exports = {

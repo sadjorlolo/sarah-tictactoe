@@ -27,12 +27,12 @@ const signInFailure = function () {
 }
 
 const changePasswordSuccess = function (data) {
-  $('.auth-msg-box').text('Changed password successfully!')
+  $('.pswd-msg-box').text('Changed password successfully!')
   showhide.clearPassword()
 }
 
 const changePasswordFailure = function () {
-  $('.auth-msg-box').text('Change Password failed.')
+  $('.pswd-msg-box').text('Change Password failed.')
   showhide.clearPassword()
 }
 
@@ -49,6 +49,7 @@ const signOutFailure = function () {
 
 const getGamesSuccess = function (data) {
   $('.stats-box').text('You have played a total of ' + data.games.length + ' games.')
+  console.log('getgame data is ', data)
 }
 
 const getGamesError = function () {
@@ -57,6 +58,7 @@ const getGamesError = function () {
 
 const createGameSuccess = function (data) {
   store.game = data.game
+  console.log('creategamesuccess data is', data)
   $('.game-board').show()
   $('.message-box').text('New game! Time to play!')
 }
@@ -66,7 +68,8 @@ const createGameError = function () {
 }
 
 const updateGameSuccess = function (data) {
-  $('update-msg').text('Move saved!')
+  console.log('data is', data)
+  $('.update-msg').text('Move saved!')
 }
 
 const updateGameError = function () {

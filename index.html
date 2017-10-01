@@ -19,68 +19,68 @@
       <form class="sign-up user-info">
         <fieldset>
           <div class='auth-header'>Sign Up!</div>
-          <input class='signup_email' type="text" name="credentials[email]" placeholder="Enter Email">
-          <input class='signup_pswd' type="password" name="credentials[password]" placeholder="Enter Password">
-          <input class='signup_conf' type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <input class='auth-button' type="submit" name="submit" value="Sign up!">
+          <input class='signup_email auth-input' type="text" name="credentials[email]" placeholder="Enter Email">
+          <input class='signup_pswd auth-input' type="password" name="credentials[password]" placeholder="Enter Password">
+          <input class='signup_conf auth-input' type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <input class='auth-button auth-input' type="submit" name="submit" value="Sign up!">
         </fieldset>
       </form>
 
       <form class="sign-in user-info">
         <fieldset>
           <div class='auth-header'>Sign In!</div>
-          <input class='signin_email'type="text" name="credentials[email]" placeholder="Enter Email">
-          <input class='signin_pswd'type="password" name="credentials[password]" placeholder="Enter Password">
-          <input class='auth-button' type="submit" name="submit" value="Sign in!">
+          <input class='signin_email auth-input'type="text" name="credentials[email]" placeholder="Enter Email">
+          <input class='signin_pswd auth-input'type="password" name="credentials[password]" placeholder="Enter Password">
+          <input class='auth-button auth-input' type="submit" name="submit" value="Sign in!">
         </fieldset>
       </form>
       <div class='auth-msg-box'></div>
 
-      <button type='button' class='pswd-button'>Change Your Password</button>
+      <h4 class='pswd-msg-box'></h4>
       <form class="change-pswd">
         <fieldset>
-          <!-- <legend>Change Password!</legend> -->
           <input class='pswd_old' type="password" name="passwords[old]" placeholder="Enter Old Password">
           <input class='pswd_new' type="password" name="passwords[new]" placeholder="Enter New Password">
           <input type="submit" name="submit" value="Change Password!">
         </fieldset>
       </form>
 
+      <input type='button' class='get-games' name='button' value='Get Game Stats!'>
+      <div class='stats-box'></div>
+      <br>
+      <input type='button' class='create-game' name='button' value='New Game!'>
+
+      <h2 class='declare-winner'></h2>
+      <div class='message-box'></div>
+      <div class='game-board'>
+
+        <div class='top-row'>
+          <div class='box col-xs-4 col-md-3 col-md-offset-2' id='0'></div>
+          <div class='box col-xs-4 col-md-3' id='1'></div>
+          <div class='box col-xs-4 col-md-3' id='2'></div>
+        </div>
+
+        <div class='middle-row'>
+          <div class='box col-xs-4 col-md-3 col-md-offset-2' id='3'></div>
+          <div class='box col-xs-4 col-md-3' id='4'></div>
+          <div class='box col-xs-4 col-md-3' id='5'></div>
+        </div>
+
+        <div class='bottom-row'>
+          <div class='box col-xs-4 col-md-3 col-md-offset-2' id='6'></div>
+          <div class='box col-xs-4 col-md-3' id='7'></div>
+          <div class='box col-xs-4 col-md-3' id='8'></div>
+        </div>
+      </div>
+      <br>
+
+      <div class='update-msg'></div>
+
       <form class="sign-out">
         <fieldset>
-          <legend>Sign Out!</legend>
           <input type="submit" name="submit" value="Sign out!">
         </fieldset>
       </form>
 
-      <input type='button' class='get-games' name='button' value='get games'>
-      <input type='button' class='create-game' name='button' value='create game'>
-
-      <h1 class='welcome'></h1>
-      <h2 class='declare-winner'></h2>
-      <div class='game-board'>
-
-        <div class='top-row'>
-          <div class='box' id='0'></div>
-          <div class='box' id='1'></div>
-          <div class='box' id='2'></div>
-        </div>
-
-        <div class='middle-row'>
-          <div class='box' id='3'></div>
-          <div class='box' id='4'></div>
-          <div class='box' id='5'></div>
-        </div>
-
-        <div class='top-row'>
-          <div class='box' id='6'></div>
-          <div class='box' id='7'></div>
-          <div class='box' id='8'></div>
-        </div>
-      </div>
-      <br>
-      <div class='update-msg'></div>
-      <div class='message-box'></div>
-      <div class='stats-box'></div>
     </body>
 </html>
