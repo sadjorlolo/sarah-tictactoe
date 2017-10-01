@@ -42,14 +42,14 @@ body {
   }
 
   .auth-button {
-    color: $background;
     background-color: $grey;
+    color: $background;
     margin-bottom: 20px;
   }
 }
 
 .auth-msg-box {
-  color: red;
+  color: $peach;
   font-size: 20px;
 }
 
@@ -96,6 +96,10 @@ body {
   color: $purple;
   font-size: 80px;
   height: 200px;
-  text-align: center;
   padding-top: 40px;
+  text-align: center;
+}
+
+.update-msg {
+  clear: both;
 }

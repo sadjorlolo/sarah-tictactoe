@@ -17,12 +17,44 @@ const togglePlayer = function () {
   }
 }
 
-let gameBoard
+let gameBoard = []
+
+const onCreateGame = function (event) {
+  $('.box').on('click', setClickValue)
+  $('.box').on('click', onUpdateGame)
+  gameBoard = ['', '', '', '', '', '', '', '', '']
+  console.log('oncreate box value is', $('.box').text())
+  $('.box').text('')
+  console.log('oncreate box value post clear', $('.box').text())
+  console.log('gameboard post clear is', gameBoard)
+
+  $('.declare-winner').text('')
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log('oncreatedata data is', data)
+  api.create(data)
+    .then(ui.createGameSuccess)
+    .catch(ui.createGameError)
+  currentPlayer = playerX
+  $('.create-game').hide()
+}
+
+const setClickValue = function () {
+  $('.message-box').text('')
+  const index = $(this).attr('id')
+  if ($(this).text() === '') {
+    $(this).text(currentPlayer)
+    pushToGameArray(currentPlayer, index)
+    checkForWin()
+  } else {
+    $('.message-box').text('That box already has a value. Choose another box.')
+  }
+}
 
 const pushToGameArray = function (player, index) {
   const thisPlayer = player
   gameBoard[index] = thisPlayer
-  console.log(gameBoard)
+  console.log('pushtogamearray data is', gameBoard)
 }
 
 const checkForWin = function () {
@@ -39,23 +71,15 @@ const checkForWin = function () {
   ) {
     $('.declare-winner').text('Player ' + currentPlayer + ' is the winner!')
     $('.box').off('click')
+    gameBoard = ['', '', '', '', '', '', '', '', '']
+    $('.create-game').show()
   } else if (draw) {
     $('.declare-winner').text('Game is a draw! No one wins!')
     $('.box').off('click')
+    gameBoard = ['', '', '', '', '', '', '', '', '']
+    $('.create-game').show()
   } else {
     togglePlayer()
-  }
-}
-
-const setClickValue = function () {
-  $('.message-box').text('')
-  const index = $(this).attr('id')
-  if ($(this).text() === '') {
-    $(this).text(currentPlayer)
-    pushToGameArray(currentPlayer, index)
-    checkForWin()
-  } else {
-    $('.message-box').text('That box already has a value. Choose another box.')
   }
 }
 
@@ -88,6 +112,8 @@ const onSignOut = function (event) {
   api.signout()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
+  gameBoard = ['', '', '', '', '', '', '', '', '']
+  $('.box').text('')
 }
 
 const onGetGames = function (event) {
@@ -95,23 +121,6 @@ const onGetGames = function (event) {
   api.index()
     .then(ui.getGamesSuccess)
     .catch(ui.getGamesError)
-}
-
-const onCreateGame = function (event) {
-  gameBoard = ['', '', '', '', '', '', '', '', '']
-  console.log('oncreate box value is', $('.box').text())
-  $('.box').text('')
-  console.log('oncreate box value post clear', $('.box').text())
-
-  // $('.box').on('click', setClickValue)
-  $('.declare-winner').text('')
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  console.log('oncreatedata data is', data)
-  api.create(data)
-    .then(ui.createGameSuccess)
-    .catch(ui.createGameError)
-  currentPlayer = playerX
 }
 
 const onUpdateGame = function (event) {
@@ -135,8 +144,9 @@ const onUpdateGame = function (event) {
 
 const addHandlers = function () {
   $('.box').text('')
-  $('.box').on('click', setClickValue)
-  $('.box').on('click', onUpdateGame)
+  $('.create-game').on('click', onCreateGame)
+  // $('.box').on('click', setClickValue)
+  // $('.box').on('click', onUpdateGame)
 
   $('.sign-up').on('submit', onSignUp)
   $('.sign-in').on('submit', onSignIn)
@@ -146,7 +156,6 @@ const addHandlers = function () {
   showhide.initialLoadHide()
 
   $('.get-games').on('click', onGetGames)
-  $('.create-game').on('click', onCreateGame)
 }
 
 module.exports = {

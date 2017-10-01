@@ -19,6 +19,7 @@ const signInSuccess = function (data) {
 
   showhide.clearSignIn()
   showhide.signInShowHide()
+  // $('.create-game').on('click', onCreateGame)
 }
 
 const signInFailure = function () {
@@ -59,6 +60,7 @@ const getGamesError = function () {
 const createGameSuccess = function (data) {
   store.game = data.game
   console.log('creategamesuccess data is', data)
+  console.log('store.game is ', store.game)
   $('.game-board').show()
   $('.message-box').text('New game! Time to play!')
 }
