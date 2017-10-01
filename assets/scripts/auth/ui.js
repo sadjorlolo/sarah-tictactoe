@@ -38,7 +38,6 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function (data) {
   $('.auth-msg-box').text('Signed out successfully!')
-  // store.game = null
   store.user = null
   showhide.signOutShowHide()
   showhide.signOutClearMessage()
@@ -50,7 +49,6 @@ const signOutFailure = function () {
 
 const getGamesSuccess = function (data) {
   $('.stats-box').text('You have played a total of ' + data.games.length + ' games.')
-  console.log('getgame data is ', data)
 }
 
 const getGamesError = function () {
@@ -59,8 +57,6 @@ const getGamesError = function () {
 
 const createGameSuccess = function (data) {
   store.game = data.game
-  console.log('creategamesuccess data is', data)
-  console.log('store.game is ', store.game)
   $('.game-board').show()
   $('.message-box').text('New game! Time to play!')
 }
@@ -70,7 +66,6 @@ const createGameError = function () {
 }
 
 const updateGameSuccess = function () {
-  console.log('updatesuccess msg data is')
   $('.update-msg').text('Move saved!')
 }
 
