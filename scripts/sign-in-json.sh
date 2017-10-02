@@ -1,6 +1,5 @@
-# API="${API_ORIGIN:-http://httpbin.org}"
-# URL_PATH="/post"
-API="${API_ORIGIN:-http://tic-tac-toe.wdibos.com}"
+
+API="${API_ORIGIN:-https://aqueous-atoll-85096.herokuapp.com}"
 URL_PATH="/sign-in"
 
 curl "${API}${URL_PATH}" \
@@ -13,7 +12,5 @@ curl "${API}${URL_PATH}" \
       "password": "'"${PASSWORD}"'"
     }
   }'
-
-  # In terminal - $ EMAIL='sarah' PASSWORD='sarah' sh scripts/sign-in-json.sh
 
 echo

@@ -1,6 +1,5 @@
-# API="${API_ORIGIN:-http://httpbin.org}"
-# URL_PATH="/delete?id=$ID"
-API="${API_ORIGIN:-http://tic-tac-toe.wdibos.com}"
+
+API="${API_ORIGIN:-https://aqueous-atoll-85096.herokuapp.com}"
 URL_PATH="/games"
 
 curl "${API}${URL_PATH}" \
@@ -10,5 +9,3 @@ curl "${API}${URL_PATH}" \
 
 
 echo
-
-# ID=900 TOKEN=BAhJIiUwMTdhNTMyZDc2NDQ0NDBmMDE0MjZkZDVhMDhhNDgzNAY6BkVG--a2e67561fa06995397d9b5d7f8ee8122cad25f54 sh scripts/get-games-json.sh
