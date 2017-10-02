@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Sarah's Tic-Tac-Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+
+      <h1>Welcome to Sarah's Tic Tac Toe Game!</h1>
+      <h4 class='sign-in-as'></h4>
+      <h3 class='sign-in-play'>Please sign in to play.</h3>
+      <form class="sign-up user-info">
+        <fieldset>
+          <div class='auth-header'>Sign Up!</div>
+          <input class='signup_email auth-input' type="text" name="credentials[email]" placeholder="Enter Email">
+          <input class='signup_pswd auth-input' type="password" name="credentials[password]" placeholder="Enter Password">
+          <input class='signup_conf auth-input' type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <input class='auth-button auth-input' type="submit" name="submit" value="Sign up!">
+        </fieldset>
+      </form>
+
+      <form class="sign-in user-info">
+        <fieldset>
+          <div class='auth-header'>Sign In!</div>
+          <input class='signin_email auth-input'type="text" name="credentials[email]" placeholder="Enter Email">
+          <input class='signin_pswd auth-input'type="password" name="credentials[password]" placeholder="Enter Password">
+          <input class='auth-button auth-input' type="submit" name="submit" value="Sign in!">
+        </fieldset>
+      </form>
+      <div class='auth-msg-box'></div>
+
+      <h4 class='pswd-msg-box'></h4>
+      <form class="change-pswd">
+        <fieldset>
+          <input class='pswd_old' type="password" name="passwords[old]" placeholder="Enter Old Password">
+          <input class='pswd_new' type="password" name="passwords[new]" placeholder="Enter New Password">
+          <input type="submit" name="submit" value="Change Password!">
+        </fieldset>
+      </form>
+
+      <input type='button' class='get-games' name='button' value='Get Game Stats!'>
+      <div class='stats-box'></div>
+      <br>
+      <input type='button' class='create-game' name='button' value='New Game!'>
+
+      <h2 class='declare-winner'></h2>
+      <div class='message-box'></div>
+      <div class='update-msg'></div>
+
+      <div class='game-board'>
+        <div class='top-row'>
+          <div class='box col-xs-4 col-md-3 col-md-offset-2' id='0'></div>
+          <div class='box col-xs-4 col-md-3' id='1'></div>
+          <div class='box col-xs-4 col-md-3' id='2'></div>
+        </div>
+
+        <div class='middle-row'>
+          <div class='box col-xs-4 col-md-3 col-md-offset-2' id='3'></div>
+          <div class='box col-xs-4 col-md-3' id='4'></div>
+          <div class='box col-xs-4 col-md-3' id='5'></div>
+        </div>
+
+        <div class='bottom-row'>
+          <div class='box col-xs-4 col-md-3 col-md-offset-2' id='6'></div>
+          <div class='box col-xs-4 col-md-3' id='7'></div>
+          <div class='box col-xs-4 col-md-3' id='8'></div>
+        </div>
+      </div>
+      <br>
+
+
+      <form class="sign-out">
+        <fieldset>
+          <input type="submit" name="submit" value="Sign out!">
+        </fieldset>
+      </form>
+
+    </body>
+</html>
